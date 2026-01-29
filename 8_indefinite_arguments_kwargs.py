@@ -15,7 +15,12 @@ print(number_attributes(height= 20, length = 10, width = 5))
 # Indefinite Arguments (**kwargs) Practice #2
 # Create a function called list_attributes that returns in the form of a list the values of the attributes given in the form of keywords. The function must expect to receive any number of arguments of this type.
 
-
+def list_attributes(**kwargs):
+    attributes_list = []
+    for value in kwargs.items():
+        attributes_list.append(value)
+    return attributes_list
+print(list_attributes(color= "red", size= "medium", shape= "circle"))
 
 
 # Indefinite Arguments (**kwargs) Practice #3
@@ -34,4 +39,10 @@ print(number_attributes(height= 20, length = 10, width = 5))
 # Characteristics of Ash:
 # eye_color: brown
 # hair_color: black
+
+def describe_person(name, **kwargs):
+    print(f"Characteristics of {name}:")
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+describe_person("Ash", eye_color="brown", hair_color="black")
 
